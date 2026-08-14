@@ -1,147 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Terms - restudio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Privacy · Restudio</title>
+  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/02cSd2QF/restudio-profile.png">
+  <!-- Tiny5 for navbar -->
+  <link href="https://fonts.cdnfonts.com/css/tiny5" rel="stylesheet">
+  <!-- Dosis for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) – reduced usage -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Tiny5 Font -->
-    <link href="https://fonts.cdnfonts.com/css/tiny5" rel="stylesheet">
+    body {
+      font-family: 'Segoe UI', 'Linux Libertine', 'Georgia', 'Times New Roman', serif;
+      background-color: #f6f6f6;
+      line-height: 1.6;
+      color: #202122;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f5f5f5;
-            line-height: 1.8;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    .navbar {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-        .navbar {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
+    .navbar img {
+      height: 40px;
+      margin-right: 15px;
+    }
 
-        .navbar img {
-            height: 40px;
-            margin-right: 15px;
-        }
+    .navbar h1 {
+      font-family: 'Tiny5', sans-serif;
+      font-size: 20px;
+      margin: 0;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
 
-        .navbar h1 {
-            font-family: 'Tiny5', sans-serif;
-            font-size: 20px;
-            margin: 0;
-            color: #ffffff;
-        }
+    /* ===== BANNER (Uiverse) – no text ===== */
+    .banner-container {
+      width: 100%;
+      height: 120px;
+      --s: 60px;
+      --c1: #180a22;
+      --c2: #5b42f3;
+      --_g: radial-gradient(
+        25% 25% at 25% 25%,
+        var(--c1) 99%,
+        rgba(0, 0, 0, 0) 101%
+      );
+      background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
+          calc(2 * var(--s)),
+        var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
+        radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
+          var(--s),
+        repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
+          calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+    }
 
-        .page-title {
-            font-family: 'Tiny5', sans-serif;
-            font-size: 28px;
-            margin: 20px 20px 10px 20px;
-            color: #222;
-            text-align: center;
-        }
+    .privacy-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 24px;
+      flex: 1;
+      width: 100%;
+    }
 
-        hr {
-            margin: 0 20px 30px 20px;
-            border: 1px solid #ccc;
-        }
+    .privacy-card {
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      padding: 32px 36px;
+      transition: all 0.2s ease;
+    }
 
-        .content-section {
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            padding: 0 30px;
-            flex: 1;
-        }
+    .page-headline {
+      font-family: 'Dosis', 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 32px;
+      border-bottom: 1px solid #c8ccd1;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #1a1f2b;
+    }
 
-        p {
-            margin: 1.5em 0;
-            color: #222;
-            font-size: 1.1rem;
-        }
+    .page-headline i {
+      color: #2c6e9e;
+      font-size: 28px;
+      margin-right: 4px;
+    }
 
-        h2 {
-            font-family: 'Tiny5', sans-serif;
-            font-size: 24px;
-            margin: 40px 0 20px 0;
-            color: #333;
-        }
+    h2 {
+      font-family: 'Dosis', 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 26px;
+      margin: 32px 0 14px 0;
+      border-bottom: 1px solid #eaecf0;
+      padding-bottom: 6px;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        h3 {
-            font-family: 'Tiny5', sans-serif;
-            font-size: 20px;
-            margin: 30px 0 15px 0;
-            color: #444;
-        }
+    h2 i {
+      color: #2c6e9e;
+      font-size: 24px;
+    }
 
-        ul {
-            margin: 1.2em 0;
-            padding-left: 25px;
-        }
+    h3 {
+      font-family: 'Dosis', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      margin: 28px 0 10px 0;
+      color: #1e3a5f;
+    }
 
-        li {
-            margin-bottom: 0.8em;
-            color: #444;
-        }
+    h4 {
+      font-family: 'Dosis', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      margin: 22px 0 8px 0;
+      color: #1e3a5f;
+    }
 
-        .footer {
-            text-align: left;
-            padding: 10px 20px;
-            color: #666;
-            border-top: none;
-            margin-top: 30px;
-        }
-    </style>
+    .privacy-card p {
+      margin: 16px 0;
+      line-height: 1.7;
+      color: #2d3748;
+    }
+
+    .privacy-card ul {
+      margin: 12px 0 18px 0;
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .privacy-card li {
+      margin-bottom: 10px;
+      padding-left: 24px;
+      position: relative;
+      color: #2d3748;
+    }
+
+    .privacy-card li::before {
+      content: "•";
+      color: #2c6e9e;
+      font-weight: bold;
+      font-size: 1.3rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .highlight-box {
+      background: #f8fafc;
+      border-left: 6px solid #2c6e9e;
+      padding: 18px 24px;
+      margin: 28px 0 20px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .highlight-box strong {
+      color: #0c4e6e;
+    }
+
+    .footer-wiki {
+      background-color: #f8f9fa;
+      border-top: 1px solid #e2e2e2;
+      padding: 16px 24px;
+      font-size: 13px;
+      color: #54595d;
+      font-family: sans-serif;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    hr {
+      margin: 28px 0 18px;
+      border: 0;
+      border-top: 1px solid #e2e2e2;
+    }
+
+    .contact-simple {
+      background: #f1f5f9;
+      padding: 10px 18px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 6px;
+      color: #1e293b;
+    }
+
+    .contact-simple a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+
+    .contact-simple a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-simple i {
+      color: #2c6e9e;
+      width: 20px;
+    }
+
+    .contact-simple .email-link {
+      color: #0645ad;
+    }
+
+    @media (max-width: 700px) {
+      .privacy-card {
+        padding: 24px 20px;
+      }
+      .page-headline {
+        font-size: 26px;
+        flex-wrap: wrap;
+      }
+      .privacy-card ul {
+        padding-left: 4px;
+      }
+      .banner-container {
+        height: 80px;
+      }
+      .contact-simple {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="https://i.postimg.cc/yYCszSyc/swrh-restudio.png" alt="Restudio Logo">
+    <h1>Privacy &amp; Terms</h1>
+  </div>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <img src="https://i.postimg.cc/yYCszSyc/swrh-restudio.png" alt="Logo">
-        <h1>Terms</h1>
+  <!-- ===== BANNER (Uiverse) – no text ===== -->
+  <div class="banner-container"></div>
+
+  <!-- Main privacy container -->
+  <div class="privacy-container">
+    <div class="privacy-card">
+      
+      <!-- Headline -->
+      <div class="page-headline">
+        <i class="fas fa-shield-alt"></i> 
+        <span>Privacy · Terms of Service</span>
+      </div>
+
+      <p style="font-size: 1.05rem; color: #1f2937;">
+        By using any Restudio product, you agree to the following terms. 
+        We believe in transparency, openness, and your right to privacy.
+      </p>
+
+      <!-- ====== TERMS OF SERVICE ====== -->
+      <h2><i class="fas fa-file-contract"></i> Terms of Service</h2>
+      <p style="color: #4b5563;"><i class="far fa-calendar-alt" style="margin-right: 6px;"></i> Last updated: August 15, 2026</p>
+
+      <h3>Your Content</h3>
+      <ul>
+        <li>You own everything you create with our tools.</li>
+        <li>Don't use content that doesn't belong to you – respect others' work.</li>
+      </ul>
+
+      <!-- ====== RULES OF USE ====== -->
+      <h3>Rules of Use</h3>
+
+      <h4>Legal Use</h4>
+      <p>You must use Restudio products and services only for lawful purposes and in compliance with applicable laws and regulations.</p>
+
+      <h4>Account Responsibility</h4>
+      <p>You are responsible for maintaining the security of your account and credentials. You must not share, sell, transfer, or misuse your account.</p>
+
+      <h4>Abuse &amp; Disruption</h4>
+      <p>You must not abuse, overload, disrupt, interfere with, or attempt to impair the operation, availability, or security of Restudio services.</p>
+
+      <h4>Unauthorized Access</h4>
+      <p>You must not attempt to gain unauthorized access to accounts, systems, networks, APIs, infrastructure, or services belonging to Restudio or other users.</p>
+
+      <h4>Security Research</h4>
+      <p>Security research and vulnerability testing must be conducted responsibly and without accessing, modifying, destroying, or exposing data belonging to others. Vulnerabilities should be reported through the appropriate Restudio security channel.</p>
+
+      <h4>Reverse Engineering</h4>
+      <p>You must not reverse-engineer, decompile, disassemble, or otherwise attempt to extract proprietary source code or protected components, except where such activity is expressly permitted by applicable law or the applicable open-source license.</p>
+
+      <h4>Malicious Software</h4>
+      <p>You must not use Restudio services to distribute malware, ransomware, spyware, viruses, destructive code, or other software designed to compromise or damage systems or users.</p>
+
+      <h4>Harmful or Abusive Content</h4>
+      <p>You must not use Restudio services to facilitate fraud, harassment, threats, exploitation, or other serious harm to individuals or organizations.</p>
+
+      <h4>Intellectual Property</h4>
+      <p>You retain rights to content and projects you create, except where otherwise stated. You must respect the intellectual-property rights of Restudio and third parties.</p>
+
+      <h4>Service Integrity</h4>
+      <p>You must not circumvent security controls, rate limits, licensing mechanisms, access restrictions, or other technical safeguards implemented by Restudio.</p>
+
+      <h4>Enforcement</h4>
+      <p>Restudio may restrict, suspend, or terminate access to services when necessary to protect users, systems, services, or the integrity of the Restudio ecosystem.</p>
+
+      <h4>Respect Others</h4>
+      <p>Restudio is built for developers, creators, and users from different backgrounds. Use our services responsibly and do not intentionally use them to harm others.</p>
+
+      <!-- ====== PRIVACY POLICY ====== -->
+      <h2 style="margin-top: 44px;"><i class="fas fa-user-secret"></i> Privacy Policy</h2>
+      <p style="color: #4b5563;"><i class="far fa-calendar-alt" style="margin-right: 6px;"></i> Last updated: August 15, 2026</p>
+
+      <div class="highlight-box">
+        <strong>We don't collect your personal information.</strong> 
+        You don't need an account to use our products. Everything you make stays on your device – we never see it.
+      </div>
+
+      <h3>What we don't collect</h3>
+      <ul>
+        <li>No names, emails, or IP addresses.</li>
+        <li>No usage tracking or analytics.</li>
+        <li>No device identifiers.</li>
+      </ul>
+
+      <h3>Cookies</h3>
+      <p>
+        We don't use cookies for tracking. Any local storage is used only for your preferences 
+        (e.g., language) and stays in your browser.
+      </p>
+
+      <h3>Children's privacy</h3>
+      <p>
+        Our products are safe for all ages. Since we collect no data, we comply with COPPA 
+        and similar regulations by design.
+      </p>
+
+      <!-- ====== CONTACT ====== -->
+      <h2 style="margin-top: 44px;"><i class="fas fa-address-card"></i> Contact &amp; Questions</h2>
+      <p>
+        If you have any questions about these terms or our privacy practices, 
+        reach out to us through any of the following channels:
+      </p>
+      <div class="contact-simple">
+        <i class="fas fa-envelope"></i> 
+        <a href="mailto:restudiosupport@gmail.com" class="email-link">restudiosupport@gmail.com</a>
+        &nbsp;&nbsp; 
+        <i class="fab fa-twitter"></i> 
+        <a href="https://x.com/RESTUDIO_GAMES" target="_blank" rel="noopener noreferrer">@RESTUDIO_GAMES</a>
+        &nbsp;&nbsp; 
+        <i class="fab fa-github"></i> 
+        <a href="https://github.com/RestudioSoftwareLaboratories" target="_blank" rel="noopener noreferrer">RestudioSoftwareLaboratories</a>
+      </div>
+
+      <hr>
+      <p style="font-style: italic; color: #3d4a5a; margin-top: 10px;">
+        Restudio Software Laboratories – open source, free, and built with care.
+      </p>
+
+      <!-- acceptance note -->
+      <div style="background: #eef2ff; padding: 12px 20px; border-radius: 60px; margin-top: 30px; border: 1px solid #cbd5e1; text-align: center; color: #1e3a5f;">
+        By using any Restudio product, you accept these terms and our privacy policy.
+      </div>
+
     </div>
+  </div>
 
-    <!-- Page Title -->
-    <h1 class="page-title">Terms of Service & Privacy</h1>
-    <hr>
-
-    <!-- Main content -->
-    <div class="content-section">
-        
-        <h2>Terms of Service</h2>
-        <p>Last updated: March 2026</p>
-        <p>By using any restudio product, you agree to these terms.</p>
-
-        <h3>Your Content</h3>
-        <ul>
-            <li>You own what you make.</li>
-            <li>Don't use things that aren't yours.</li>
-        </ul>
-
-        <h3>Rules</h3>
-        <ul>
-            <li>No illegal activity.</li>
-            <li>No hacking or damaging our services.</li>
-        </ul>
-
-        <h3>Our Rights</h3>
-        <p>restudio, Funblocks, our products and logos belong to us.</p>
-
-        <h2>Privacy</h2>
-        <p>Last updated: March 2026</p>
-        <p>You don't need an account to use our products. We don't collect your personal information. Everything you make stays on your device.</p>
-
-        <h3>Contact</h3>
-        <p>Questions? Reach out on our social media.</p>
-
-        <p style="margin-top: 40px;">By using any restudio product, you agree to these terms.</p>
-    </div>
-
-    <div class="footer">© Restudio software laboratories</div>
+  <!-- Footer -->
+  <div class="footer-wiki">
+    <i class="far fa-copyright" style="margin-right: 4px;"></i> Restudio Software Laboratories
+    <span style="float: right; font-size: 12px; color: #6b7280;">
+      <i class="fas fa-code"></i> open source · free
+    </span>
+  </div>
 
 </body>
 </html>
